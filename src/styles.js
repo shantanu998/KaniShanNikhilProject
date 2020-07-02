@@ -1,10 +1,12 @@
 import styled from "styled-components";
 export const Card = styled.div`
-  width: 50%;
-  margin-bottom: 30px;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 5px 10px #888888;
+  padding: 20px;
+  margin: 20px;
+  width: 220px;
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px #282c34;
+  text-align: center;
 `;
 export const Image = styled.img`
   height: 200px;
@@ -13,5 +15,10 @@ export const Button = styled.button`
   width: 100px;
 `;
 export const Container = styled.div`
-  padding: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  padding: 10px;
+  margin: 20px;
 `;

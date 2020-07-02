@@ -5,15 +5,20 @@ import store from "./store";
 import { Link } from "react-router-dom";
 export default function firstPage(list) {
   return (
-    <Container className="container">
+    <Container className="container" style={{textAlign:'center'}}>
       {list.map((item) => (
+        <div>
+         <Link to={"/" + list.indexOf(item)} style={{textDecoration:'none', color:'black'}}>
         <Card className="card" key={item.id}>
           <Image
             className="card-img-top"
             src={item.url}
             alt="Card image cap"
           ></Image>
-          <div className="card-body">{item.name}</div>
+          <h5 className="card-body">{item.name}</h5>
+          <p className="card-body">{item.price}</p>
+          </Card>
+          </Link>
           <Button
             type="button"
             className="btn btn-danger"
@@ -25,11 +30,10 @@ export default function firstPage(list) {
                 },
               })
             }
-          >
+            >
             delete
-          </Button>
-          <Link to={"/" + list.indexOf(item)}>Open</Link>
-        </Card>
+          </Button> 
+        </div>
       ))}
     </Container>
   );
