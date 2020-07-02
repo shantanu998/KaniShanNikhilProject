@@ -22,3 +22,34 @@ export const Container = styled.div`
   padding: 10px;
   margin: 20px;
 `;
+
+export const ProductDetails = styled.div`
+  display: inline-flex;
+  height: 400px;
+  width: 700px;
+  box-shadow: 0px 0px 10px #282c34;
+  border-radius: 15px;
+`;
+export const ImageBig = styled.img`
+  height: 400px;
+  width: 320px;
+  padding: 40px;
+`;
+export const ProdDescription = styled.div`
+  height: 400px;
+  width: 300px;
+  padding: 50px;
+  margin: 20px;
+`;
+export const BackButton = styled.div`
+  width: 100px;
+  text-align: center;
+  background-color: crimson;
+  color: white;
+  margin: 30px;
+  font-size: 20px;
+  border: crimson;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 0px 10px #282c34;
+`;
