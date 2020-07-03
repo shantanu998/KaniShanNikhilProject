@@ -1,18 +1,26 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Card, Image } from "./styles";
+import { ProductDetails, ImageBig, ProdDescription, BackButton } from "./styles";
 import { Link } from "react-router-dom";
 
 export default function detailsPage(match, list) {
   return (
-    <Card className="card">
-      <Image
-        className="card-img-top"
-        src={list[match.params.id].url}
-        alt="Card image cap"
-      ></Image>
-      <div className="card-body">{list[match.params.id].name}</div>
-      <Link to={"/"}>Back</Link>
-    </Card>
+    <div style={{margin:'20px'}}>
+      <div>
+        <ProductDetails className="productDetails">
+          <ImageBig
+            className="card-img-top"
+            src={list[match.params.id].url}
+            alt="Card image cap"
+          ></ImageBig>
+          <ProdDescription className="prodDescription">
+            <h1>{list[match.params.id].name}</h1>
+            <p>{list[match.params.id].description}</p>
+            <h1>{list[match.params.id].price}</h1>
+          </ProdDescription><br></br>
+        </ProductDetails>
+      </div>
+      <Link to={"/"} style={{textDecoration:'none'}}><BackButton className="back_btn">Back</BackButton></Link>
+    </div>
   );
 }
