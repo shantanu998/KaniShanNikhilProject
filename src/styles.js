@@ -2,18 +2,26 @@ import styled from "styled-components";
 export const Card = styled.div`
   padding: 20px;
   margin: 20px;
-  width: 220px;
-  height: 350px;
+  width: 250px;
+  height: 380px;
   border-radius: 5px;
   box-shadow: 0px 0px 15px #282c34;
   text-align: center;
 `;
 export const Image = styled.img`
-  height: 200px;
+  height: 250px;
+  width: 200px;
+  padding: 10px;
 `;
 export const Button = styled.button`
   width: 100px;
 `;
+
+export const ContainerMain = styled.div`
+  padding: 10px;
+  text-align:center;
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
