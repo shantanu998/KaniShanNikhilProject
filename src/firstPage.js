@@ -1,15 +1,31 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Card, Image, Button, Container } from "./styles";
+import { Card, Image, Button, Container, ContainerMain } from "./styles";
 import store from "./store";
+import cstore from "./cart/cartStore"
 import { Link } from "react-router-dom";
+import './navbar.css'
+
 export default function firstPage(list) {
   return (
+    <ContainerMain>
+      <nav className="nav-wrapper">
+        <div className="container">
+            <ul className="right">
+                <li><Link to="/" className="brand-logo"><img src="https://www.bmcsoftware.com.au/content/experience-fragments/bmc/language-masters/en/customerspotlights/deutsche-telekomag/deutsche-telekomag/_jcr_content/root/customer_spotlight/logo.img.png" className='logo' alt='logo'/></Link></li>
+                <li><Link to="/" className="nav-text" style={{textDecoration:'none'}}>Shop</Link></li>
+                <li><Link to="/cart/" className="nav-text" style={{textDecoration:'none'}}>My cart</Link></li>
+                <li><Link to="/cart/"><img src="https://t7.rbxcdn.com/7944ec53125aaf6a278deaaa64976817" className='cart-logo' alt='cart-logo'></img></Link></li>
+            </ul>
+        </div>
+      </nav>
+
     <Container className="container" style={{textAlign:'center'}}>
+      {/* <Link to={"/cart/"}>cart</Link> */}
       {list.map((item) => (
-        <div>
+        <div key={item.id}>
          <Link to={"/" + list.indexOf(item)} style={{textDecoration:'none', color:'black'}}>
-        <Card className="card" key={item.id}>
+        <Card className="card" >
           <Image
             className="card-img-top"
             src={item.url}
@@ -21,20 +37,20 @@ export default function firstPage(list) {
           </Link>
           <Button
             type="button"
-            className="btn btn-danger"
-            onClick={() =>
-              store.dispatch({
-                type: "deleteItem",
+            className="btn btn-danger" onClick={() => cstore.dispatch({
+                type: 'ADD',
+                value: item,
                 payload: {
                   id: item.id,
                 },
               })
             }
-            >
-            delete
-          </Button> 
+          >
+            Add to cart
+          </Button>
         </div>
       ))}
     </Container>
+    </ContainerMain>
   );
 }
