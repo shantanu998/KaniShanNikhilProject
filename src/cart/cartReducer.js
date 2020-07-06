@@ -1,6 +1,10 @@
+import cart from "../cart";
+import _ from "lodash"
+
 const initialState = {
     
-    prod : []
+    prod : [],
+    idi : 0
 };
 
 
@@ -9,16 +13,25 @@ const reducer = (state=initialState, action) => {
 
     switch(action.type){
         case 'ADD': 
-         
-            newState.prod.push(action.value);
-            
+         var cartitem = _.cloneDeep(action.value);
+         cartitem.cid= newState.idi+1;
+            {console.log(cartitem)}
+            newState.idi=newState.idi+1;
+            newState.prod.push(cartitem);
+           {console.log(newState.prod)}
+
             break;
         
         case 'DEL': 
+        {console.log(newState.prod)}
        
         for(var i = newState.prod.length - 1; i >= 0; i--) {
-            if(newState.prod[i].id === action.payload.id) {
+            {console.log(88)}
+            
+            
+            if(newState.prod[i].cid === action.payload.id) {
                 
+
                 newState.prod.splice(i, 1);
             }
             

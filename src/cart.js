@@ -3,6 +3,7 @@ import cstore from "./cart/cartStore";
 import './cart.css'
 import { Link } from 'react-router-dom';
 
+
 function cart(clist){
     
   
@@ -26,7 +27,7 @@ return(
                 {clist.prod.map((item) => {return(
                 
                 
-                    <div className="Item" key={item.id}>
+                    <div className="Item" key={item.cid}>
                     
                         <img src =  {item.url}  alt = {item.name} className="Img" />
                     
@@ -36,9 +37,11 @@ return(
                         </h6>
                         <button className='btn' onClick={() =>
                             cstore.dispatch({
+                                
                                 type: "DEL",
                                 payload: {
-                                id: item.id,
+                                id: item.cid,
+                                
                                 },
                             })}
                             > delete</button>

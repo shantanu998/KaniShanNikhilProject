@@ -2,6 +2,7 @@
   "products" : [
       {
           "id": 1,
+          "cid":0,
           "name": "iPhone 11",
           "price": "Rs.64,999",
           "description": "Apple iphone 11 64GB | 3GB",
@@ -9,6 +10,7 @@
       },
       {
           "id": 2,
+          "cid":0,
           "name": "iPhone 11 Pro",
           "price": "Rs.1,00,000",
           "description": "Apple iphone 11 Pro 64GB | 3GB",
@@ -16,6 +18,7 @@
       },
       {
           "id": 3,
+          "cid":0,
           "name": "iPhone 11 Pro Max",
           "price": "Rs.1,10,000",
           "description": "Apple iphone 11 Pro Max 64GB | 3GB",
@@ -23,6 +26,7 @@
       },
       {
           "id": 4,
+          "cid":0,
           "name": "iPhone SE",
           "price": "Rs.42,000",
           "description": "Apple iphone SE 64GB | 3GB",
@@ -30,6 +34,7 @@
       },
       {
           "id": 5,
+          "cid":0,
           "name": "Samsung S20",
           "price": "Rs.60,000",
           "description": "Samsung S20 64GB | 8GB",
@@ -37,13 +42,16 @@
       },
       {
           "id": 6,
+          "cid":0,
           "name": "Samsung S20+",
+          
           "price": "Rs.75,000",
           "description": "Samsung S20+ 128GB | 8GB",
           "url": "https://cdn-files.kimovil.com/default/0004/23/thumb_322972_default_big.jpeg"
       },
       {
           "id": 7,
+          "cid":0,
           "name": "Samsung S20 Ultra",
           "price": "Rs.85,000",
           "description": "Samsung S20 Ultra 128GB | 12GB",
@@ -51,11 +59,76 @@
       },
       {
           "id": 8,
-          "name": "Samsung Note 10",
+          "cid":0,
+          "name": "Samsung Note 10 Black",
           "price": "Rs.90,000",
           "description": "Samsung Note 10 128GB | 12GB",
           "url": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRuRKhk0rCevFtxcSq28laIbwIAiHecY3vyekBMAv7ZuCe6hs7-tiQ&usqp=CAc"
-      }
+      },
+      {
+        "id": 9,
+        "cid":0,
+        "name": "iPhone 11 ",
+        "price": "Rs.64,999",
+        "description": "Apple iphone 11 64GB | 3GB",
+        "url": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTD7V8QJn_nDcBFaasygys2BLyO5g6zRMWeZWz5AphfVgxciUWW7h8&usqp=CAc"
+    },
+    {
+        "id": 10,
+        "cid":0,
+        "name": "iPhone 11 Pro",
+        "price": "Rs.1,00,000",
+        "description": "Apple iphone 11 Pro 64GB | 3GB",
+        "url": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQuReRulQGju25kAz8hKQrVE2YtSsOXFCPGb4F7T2wdgLyx3oABSA&usqp=CAc"
+    },
+    {
+        "id": 11,
+        "cid":0,
+        "name": "iPhone 11 Pro Max",
+        "price": "Rs.1,10,000",
+        "description": "Apple iphone 11 Pro Max 64GB | 3GB",
+        "url": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRzvdjE7YmrXzywtAVRi1oChwGTxs6wUJgM5QhOlAg4kUozpVlj4g&usqp=CAc"
+    },
+    {
+        "id": 12,
+        "cid":0,
+        "name": "iPhone SE",
+        "price": "Rs.42,000",
+        "description": "Apple iphone SE 64GB | 3GB",
+        "url": "https://shop.unicornstore.in/uploads/images/medium/b62072e3f1ecf52347ce88ce47a8b838.png"
+    },
+    {
+        "id": 13,
+        "cid":0,
+        "name": "Samsung S20 5G",
+        "price": "Rs.60,000",
+        "description": "Samsung S20 64GB | 8GB",
+        "url": "https://www.gizmochina.com/wp-content/uploads/2020/01/Samsung-Galaxy-S20-5G-1-500x500.jpg"
+    },
+    {
+        "id": 14,
+        "cid":0,
+        "name": "Samsung S20+",
+        "price": "Rs.75,000",
+        "description": "Samsung S20+ 128GB | 8GB",
+        "url": "https://cdn-files.kimovil.com/default/0004/23/thumb_322972_default_big.jpeg"
+    },
+    {
+        "id": 15,
+        "cid":0,
+        "name": "Samsung S20 Ultra Cosmic Grey",
+        "price": "Rs.85,000",
+        "description": "Samsung S20 Ultra 128GB | 12GB",
+        "url": "https://images-na.ssl-images-amazon.com/images/I/61vc-ZnxksL._SY550_.jpg"
+    },
+    {
+        "id": 16,
+        "cid":0,
+        "name": "Samsung Note 10+",
+        "price": "Rs.90,000",
+        "description": "Samsung Note 10 128GB | 12GB",
+        "url": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRuRKhk0rCevFtxcSq28laIbwIAiHecY3vyekBMAv7ZuCe6hs7-tiQ&usqp=CAc"
+    }
 
   ]
 }
