@@ -8,7 +8,7 @@ function cart(clist){
     console.log(clist)
     
   
-  if(clist.prod == undefined || clist.prod.length==0){
+  if(clist===undefined||clist.prod == undefined || clist.prod.length==0){
     return(
         <div className="cart-empty">
             <h2>You have not added any products to the cart yet !</h2>
