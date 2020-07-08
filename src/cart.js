@@ -1,10 +1,11 @@
 import React, { Component, useState } from 'react';
-import cstore from "./cart/cartStore";
+import store from "./store";
 import './cart.css'
 import { Link } from 'react-router-dom';
 
 
 function cart(clist){
+    console.log(clist)
     
   
   if(clist.prod == undefined || clist.prod.length==0){
@@ -21,7 +22,7 @@ function cart(clist){
 return(
     <div className="cart">
         <h3>E-Cart</h3>
-        <p>You have {cstore.getState().prod.length} items waiting in your cart </p>
+        <p>You have {store.getState().cart.prod.length} items waiting in your cart </p>
         <div className="Products">
             
                 {clist.prod.map((item) => {return(
@@ -36,7 +37,7 @@ return(
                         { item.price}
                         </h6>
                         <button className='btn' onClick={() =>
-                            cstore.dispatch({
+                            store.dispatch({
                                 
                                 type: "DEL",
                                 payload: {
