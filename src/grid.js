@@ -7,6 +7,7 @@ import cart from './cart';
 import creducer from "./cart/cartReducer"
 import { Switch } from "antd";
 import cstore from "./cart/cartStore";
+import { Link } from "react-router-dom";
 
 export default function Grid() {
   const [list, setList] = useState([]);
@@ -34,8 +35,18 @@ export default function Grid() {
   //console.log(clist.length);
 
   return (
+
     <Router>
-      
+      <nav className="nav-wrapper">
+        <div className="container">
+            <ul className="right">
+                <li><Link to="/" className="brand-logo"><img src="https://www.bmcsoftware.com.au/content/experience-fragments/bmc/language-masters/en/customerspotlights/deutsche-telekomag/deutsche-telekomag/_jcr_content/root/customer_spotlight/logo.img.png" className='logo' alt='logo'/></Link></li>
+                <li><Link to="/" className="nav-text" style={{textDecoration:'none'}}>Shop</Link></li>
+                <li><Link to="/cart/" className="nav-text" style={{textDecoration:'none'}}>My cart</Link></li>
+                <li><Link to="/cart/"><img src="https://t7.rbxcdn.com/7944ec53125aaf6a278deaaa64976817" className='cart-logo' alt='cart-logo'></img></Link></li>
+            </ul>
+        </div>
+      </nav>
       <Route path="/cart/" exact component={() => cart(clist)}>
       </Route>
       

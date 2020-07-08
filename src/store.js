@@ -47,13 +47,13 @@ export function createReducerManager(initialReducers) {
       // Adds a new reducer with the specified key
       add: (key, reducer) => {
         if (!key || reducers[key]) {
-            console.log(555)
+            
           return
         }
   
         // Add the reducer to the reducer mapping
         reducers[key] = reducer
-        {console.log(9999)}
+    
   
         // Generate a new combined reducer
         combinedReducer = combineReducers(reducers)
