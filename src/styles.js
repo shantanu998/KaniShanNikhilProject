@@ -18,7 +18,7 @@ export const Button = styled.button`
 `;
 
 export const ContainerMain = styled.div`
-  padding: 10px;
+  // padding: 10px;
   text-align:center;
 `;
 
