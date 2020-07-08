@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import store from "./store";
 import './cart.css'
 import { Link } from 'react-router-dom';
-
+import { Card, Image, Button, Container, ContainerMain } from "./styles";
 
 function cart(clist){
     console.log(clist)
@@ -13,7 +13,8 @@ function cart(clist){
         <div className="cart-empty">
             <h2>You have not added any products to the cart yet !</h2>
             <p>Please go through our E-shop and add products to this cart.</p>
-            <Link to={"/"} style={{textDecoration:'none'}}><button className="btn">Back</button></Link>
+            <Link to={"/"} style={{textDecoration:'none'}}><Button type="button"
+            className="btn btn-danger">Back</Button></Link>
         </div>
     );
   }  
@@ -36,7 +37,8 @@ return(
                         <h6 className="card-subtitle mb-2 text-muted">
                         { item.price}
                         </h6>
-                        <button className='btn' onClick={() =>
+                        <Button type="button"
+            className="btn btn-danger" onClick={() =>
                             store.dispatch({
                                 
                                 type: "DEL",
@@ -45,7 +47,7 @@ return(
                                 
                                 },
                             })}
-                            > delete</button>
+                            > delete</Button>
                     </div>
                 )})}
         </div>

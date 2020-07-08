@@ -4,14 +4,7 @@ import createSagaMiddleware from "redux-saga";
 import { watchInitialize } from "./sagas";
 import creducer from "./cart/cartReducer"
 const sagaMiddleware = createSagaMiddleware();
-const rootreducer= combineReducers(
-    {
 
-        listing :lreducer,
-        cart:creducer
-
-    }
-)
 
 
 
