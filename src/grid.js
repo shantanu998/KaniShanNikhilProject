@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import firstPage from "./firstPage";
 import detailsPage from "./detailsPage";
 import cart from './cart';
+import creducer from "./cart/cartReducer"
 import { Switch } from "antd";
 import cstore from "./cart/cartStore";
 import { Link } from "react-router-dom";
@@ -20,15 +21,18 @@ export default function Grid() {
   }, []);
 
   store.subscribe(() => {
-    setList(store.getState());
+    setList(store.getState().listing);
   });
+  
   console.log(list.length);
+  //store.reducerManager.add("cart", creducer)
 
   const [clist, setcList] = useState([]);
-  cstore.subscribe(() => {
-    setcList(cstore.getState());
+  store.subscribe(() => {
+    setcList(store.getState().cart);
   });
-  console.log(clist.length);
+  console.log(88);
+  //console.log(clist.length);
 
   return (
 
