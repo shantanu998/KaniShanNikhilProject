@@ -15,17 +15,17 @@ import { Link } from "react-router-dom";
 import Loadable from 'react-loadable';
 
 const LoadableDetails = Loadable({
-	loader: () => import('./detailsPage'),
-	loading() {
-		return <div>Loading...</div>
-	}
+  loader: () => import('./detailsPage'),
+  loading() {
+    return <div>Loading...</div>
+  }
 })
 
 const LoadableCart = Loadable({
-	loader: () => import('./cart'),
-	loading() {
-		return <div>Loading...</div>
-	}
+  loader: () => import('./cart'),
+  loading() {
+    return <div>Loading...</div>
+  }
 })
 
 
