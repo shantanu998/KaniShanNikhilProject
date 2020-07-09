@@ -4,9 +4,9 @@ import './cart.css'
 import { Link } from 'react-router-dom';
 import { Card, Image, Button, Container, ContainerMain } from "./styles";
 
-function cart(props){
+function cart({clist}){
     
-  const clist = props.children;
+//   const clist = props.children;
   
   if(clist===undefined||clist.prod == undefined || clist.prod.length==0){
     return(

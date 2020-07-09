@@ -9,8 +9,8 @@ import creducer from "./cart/cartReducer"
 
 import './navbar.css';
 
-export default function firstPage(props) {
-  const list = props.children;
+export default function firstPage({list}) {
+  //const list = props.children;
   return (
     <ContainerMain>
       
@@ -43,6 +43,7 @@ export default function firstPage(props) {
                   id: item.id,
                 },
               })
+              window.alert('Item added to cart')
             }}
           >
             Add to cart
