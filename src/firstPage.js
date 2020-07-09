@@ -6,7 +6,8 @@ import cstore from "./cart/cartStore"
 import { Link } from "react-router-dom";
 import './navbar.css';
 
-export default function firstPage(list) {
+export default function firstPage(props) {
+  const list = props.children;
   return (
     <ContainerMain>
       

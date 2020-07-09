@@ -1,12 +1,28 @@
 import React, { useState, useEffect } from "react";
 import store from "./store";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import firstPage from "./firstPage";
-import detailsPage from "./detailsPage";
-import cart from './cart';
-import { Switch } from "antd";
+import FirstPage from "./firstPage";
+//import DetailsPage from "./detailsPage";
+//import Cart from './cart';
+// import { Switch } from "antd";
 import cstore from "./cart/cartStore";
 import { Link } from "react-router-dom";
+import Loadable from 'react-loadable';
+
+const LoadableDetails = Loadable({
+	loader: () => import('./detailsPage'),
+	loading() {
+		return <div>Loading...</div>
+	}
+})
+
+const LoadableCart = Loadable({
+	loader: () => import('./cart'),
+	loading() {
+		return <div>Loading...</div>
+	}
+})
+
 
 export default function Grid() {
   const [list, setList] = useState([]);
@@ -31,7 +47,6 @@ export default function Grid() {
   console.log(clist.length);
 
   return (
-
     <Router>
       <nav className="nav-wrapper">
         <div className="container">
@@ -43,15 +58,19 @@ export default function Grid() {
             </ul>
         </div>
       </nav>
-      <Route path="/cart/" exact component={() => cart(clist)}>
+      <Route path="/cart/" exact strict component={() => <LoadableCart>{clist}</LoadableCart>}>
+      {/* <Route path="/cart/" exact component={() => cart(clist)}> */}
       </Route>
       
       <Route
         path="/:id"
         exact strict
-        component={({ match }) => detailsPage(match, list)}
+        component={({ match }) => <LoadableDetails>{[match,list]}</LoadableDetails>}
+         //component={({ match }) => <DetailsPage>{[match, list]}</DetailsPage>}
+         //component={({ match }) => detailsPage(match, list)}
       ></Route>
-      <Route path="/" exact component={() => firstPage(list)}></Route>
+      {/* <Route path="/" exact component={() => <LoadableFirstPage>{list}</LoadableFirstPage>}></Route> */}
+      <Route path="/" exact component={() => <FirstPage>{list}</FirstPage>}></Route>
       
     </Router>
   );

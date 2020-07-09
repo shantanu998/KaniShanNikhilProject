@@ -4,8 +4,9 @@ import './cart.css'
 import { Link } from 'react-router-dom';
 
 
-function cart(clist){
+function cart(props){
     
+  const clist = props.children;
   
   if(clist.prod == undefined || clist.prod.length==0){
     return(
@@ -52,4 +53,4 @@ return(
 
 
 )}
-export default cart
+export default cart;

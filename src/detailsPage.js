@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import { ProductDetails, ImageBig, ProdDescription, BackButton } from "./styles";
 import { Link } from "react-router-dom";
 
-export default function detailsPage(match, list) {
+export default function detailsPage(props) {
+  const [match, list] = props.children;
   return (
     <div style={{margin:'20px'}}>
       <div>
