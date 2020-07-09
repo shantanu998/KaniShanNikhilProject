@@ -5,6 +5,11 @@ import FirstPage from "./firstPage";
 //import DetailsPage from "./detailsPage";
 //import Cart from './cart';
 // import { Switch } from "antd";
+//import firstPage from "./firstPage";
+//import detailsPage from "./detailsPage";
+//import cart from './cart';
+import creducer from "./cart/cartReducer"
+import { Switch } from "antd";
 import cstore from "./cart/cartStore";
 import { Link } from "react-router-dom";
 import Loadable from 'react-loadable';
@@ -36,15 +41,18 @@ export default function Grid() {
   }, []);
 
   store.subscribe(() => {
-    setList(store.getState());
+    setList(store.getState().listing);
   });
+  
   console.log(list.length);
+  //store.reducerManager.add("cart", creducer)
 
   const [clist, setcList] = useState([]);
-  cstore.subscribe(() => {
-    setcList(cstore.getState());
+  store.subscribe(() => {
+    setcList(store.getState().cart);
   });
-  console.log(clist.length);
+  console.log(88);
+  //console.log(clist.length);
 
   return (
     <Router>
