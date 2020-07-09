@@ -1,43 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import store from "./store";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import firstPage from "./firstPage";
+import FirstPage from "./firstPage";
 import detailsPage from "./detailsPage";
 import cart from "./cart";
+import creducer from "./cart/cartReducer";
 import { Switch } from "antd";
 import cstore from "./cart/cartStore";
 import { Link } from "react-router-dom";
 
-function useOnScreen(options) {
-  //const faders = document.querySelectorAll(".fade-in");
-  const ref = useRef();
-  let visible = false;
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      console.log(entries);
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          entry.target.classList.remove("appear");
-        } else {
-          entry.target.classList.add("appear");
-        }
-      });
-    }, options);
-    //console.log(faders);
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref, options]);
-  return [ref, visible];
-}
-
 export default function Grid() {
-  const [ref, visible] = useOnScreen({});
   const [list, setList] = useState([]);
   useEffect(() => {
     store.dispatch({
@@ -49,15 +21,18 @@ export default function Grid() {
   }, []);
 
   store.subscribe(() => {
-    setList(store.getState());
+    setList(store.getState().listing);
   });
+
   console.log(list.length);
+  //store.reducerManager.add("cart", creducer)
 
   const [clist, setcList] = useState([]);
-  cstore.subscribe(() => {
-    setcList(cstore.getState());
+  store.subscribe(() => {
+    setcList(store.getState().cart);
   });
-  console.log(clist.length);
+  console.log(88);
+  //console.log(clist.length);
 
   return (
     <Router>
@@ -114,7 +89,7 @@ export default function Grid() {
       <Route
         path="/"
         exact
-        component={() => firstPage(list, ref, visible)}
+        component={() => <FirstPage list={list}></FirstPage>}
       ></Route>
     </Router>
   );
