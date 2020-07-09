@@ -13,7 +13,7 @@ function cart({clist}){
         <div className="cart-empty">
             <h2>You have not added any products to the cart yet !</h2>
             <p>Please go through our E-shop and add products to this cart.</p>
-            <Link to={"/"} style={{textDecoration:'none'}}><Button type="button"
+            <Link to={"/firstPage/"} style={{textDecoration:'none'}}><Button type="button"
             className="btn btn-danger">Back</Button></Link>
         </div>
     );

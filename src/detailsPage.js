@@ -21,7 +21,7 @@ export default function detailsPage({match, list}) {
           </ProdDescription><br></br>
         </ProductDetails>
       </div>
-      <Link to={"/"} style={{textDecoration:'none'}}><BackButton className="back_btn">Back</BackButton></Link>
+      <Link to={"/firstPage/"} style={{textDecoration:'none'}}><BackButton className="back_btn">Back</BackButton></Link>
     </div>
   );
 }

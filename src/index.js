@@ -1,11 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-<<<<<<< HEAD
-//import App from "./home";
-import Grid from './grid';
-=======
 import Grid from "./grid";
 import LazyImage from "./lazyImage";
+
 window.addEventListener(
   "touchmove",
   (event) => {
@@ -17,7 +14,6 @@ window.addEventListener(
 window.addEventListener("wheel", (event) => {}, { passive: true });
 window.addEventListener("touchstart", (event) => {}, { passive: true });
 window.addEventListener("scroll", (event) => {}, { passive: true });
->>>>>>> 8e874d92c5057d9434eb2640b03e608bd528560f
 
 const images = [
   "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTD7V8QJn_nDcBFaasygys2BLyO5g6zRMWeZWz5AphfVgxciUWW7h8&usqp=CAc",

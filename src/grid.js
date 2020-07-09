@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,17 +7,6 @@ import "bootstrap/dist/css/bootstrap.css";
 //import Cart from './cart';
 // import { Switch } from "antd";
 import store from "./store";
-=======
-import React, { useState, useEffect, useRef } from "react";
-import store from "./store";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import FirstPage from "./firstPage";
-import detailsPage from "./detailsPage";
-import cart from "./cart";
-import creducer from "./cart/cartReducer";
-import { Switch } from "antd";
-import cstore from "./cart/cartStore";
->>>>>>> 8e874d92c5057d9434eb2640b03e608bd528560f
 import { Link } from "react-router-dom";
 import Loadable from 'react-loadable';
 import './navbar.css';
@@ -71,7 +59,6 @@ export default function Grid(){
   console.log(88);
   //console.log(clist.length);
 
-<<<<<<< HEAD
 
     return (
         <Router>
@@ -98,65 +85,3 @@ export default function Grid(){
       );
 
 }
-=======
-  return (
-    <Router>
-      <nav className="nav-wrapper">
-        <div className="container">
-          <ul className="right">
-            <li>
-              <Link to="/" className="brand-logo">
-                <img
-                  src="https://www.bmcsoftware.com.au/content/experience-fragments/bmc/language-masters/en/customerspotlights/deutsche-telekomag/deutsche-telekomag/_jcr_content/root/customer_spotlight/logo.img.png"
-                  className="logo"
-                  alt="logo"
-                />
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="nav-text"
-                style={{ textDecoration: "none" }}
-              >
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/cart/"
-                className="nav-text"
-                style={{ textDecoration: "none" }}
-              >
-                My cart
-              </Link>
-            </li>
-            <li>
-              <Link to="/cart/">
-                <img
-                  src="https://t7.rbxcdn.com/7944ec53125aaf6a278deaaa64976817"
-                  className="cart-logo"
-                  alt="cart-logo"
-                ></img>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <Route path="/cart/" exact component={() => cart(clist)}></Route>
-
-      <Route
-        path="/:id"
-        exact
-        strict
-        component={({ match }) => detailsPage(match, list)}
-      ></Route>
-      <Route
-        path="/"
-        exact
-        component={() => <FirstPage list={list}></FirstPage>}
-      ></Route>
-    </Router>
-  );
-}
->>>>>>> 8e874d92c5057d9434eb2640b03e608bd528560f

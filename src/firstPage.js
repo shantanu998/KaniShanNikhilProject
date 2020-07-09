@@ -8,14 +8,7 @@ import "./navbar.css";
 import creducer from "./cart/cartReducer";
 import LazyImage from "./lazyImage";
 
-<<<<<<< HEAD
-import './navbar.css';
-
-export default function firstPage({list}) {
-  //const list = props.children;
-=======
 export default function FirstPage({ list }) {
->>>>>>> 8e874d92c5057d9434eb2640b03e608bd528560f
   return (
     <ContainerMain>
       {/* <img src={poster} alt='poster'></img> */}
@@ -38,7 +31,6 @@ export default function FirstPage({ list }) {
               </Card>
             </Link>
 
-<<<<<<< HEAD
           <Button
             type="button"
             className="btn btn-danger" onClick={() =>{ 
@@ -58,27 +50,6 @@ export default function FirstPage({ list }) {
         </div>
       ))}
     </Container>
-=======
-            <Button
-              type="button"
-              className="btn btn-danger"
-              onClick={() => {
-                store.reducerManager.add("cart", creducer);
-                store.dispatch({
-                  type: "ADD",
-                  value: item,
-                  payload: {
-                    id: item.id,
-                  },
-                });
-              }}
-            >
-              Add to cart
-            </Button>
-          </div>
-        ))}
-      </Container>
->>>>>>> 8e874d92c5057d9434eb2640b03e608bd528560f
     </ContainerMain>
   );
 }
