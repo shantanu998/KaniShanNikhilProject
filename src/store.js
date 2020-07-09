@@ -22,7 +22,7 @@ export function createReducerManager(initialReducers) {
       getReducerMap: () => reducers,
   
       // The root reducer function exposed by this object
-      // This will be passed to the store
+      // This will be passed to the store 
       reduce: (state, action) => {
         // If any reducers have been removed, clean up their state first
         if (keysToRemove.length > 0) {
@@ -43,10 +43,10 @@ export function createReducerManager(initialReducers) {
             
           return
         }
-  
+        
         // Add the reducer to the reducer mapping
         reducers[key] = reducer
-    
+        {console.log('cart reducer added ')}
   
         // Generate a new combined reducer
         combinedReducer = combineReducers(reducers)
