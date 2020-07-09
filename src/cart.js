@@ -1,18 +1,20 @@
 import React, { Component, useState } from 'react';
-import cstore from "./cart/cartStore";
+import store from "./store";
 import './cart.css'
 import { Link } from 'react-router-dom';
-
+import { Card, Image, Button, Container, ContainerMain } from "./styles";
 
 function cart(clist){
+    console.log(clist)
     
   
-  if(clist.prod == undefined || clist.prod.length==0){
+  if(clist===undefined||clist.prod == undefined || clist.prod.length==0){
     return(
         <div className="cart-empty">
             <h2>You have not added any products to the cart yet !</h2>
             <p>Please go through our E-shop and add products to this cart.</p>
-            <Link to={"/"} style={{textDecoration:'none'}}><button className="btn">Back</button></Link>
+            <Link to={"/"} style={{textDecoration:'none'}}><Button type="button"
+            className="btn btn-danger">Back</Button></Link>
         </div>
     );
   }  
@@ -21,7 +23,7 @@ function cart(clist){
 return(
     <div className="cart">
         <h3>E-Cart</h3>
-        <p>You have {cstore.getState().prod.length} items waiting in your cart </p>
+        <p>You have {store.getState().cart.prod.length} items waiting in your cart </p>
         <div className="Products">
             
                 {clist.prod.map((item) => {return(
@@ -35,8 +37,9 @@ return(
                         <h6 className="card-subtitle mb-2 text-muted">
                         { item.price}
                         </h6>
-                        <button className='btn' onClick={() =>
-                            cstore.dispatch({
+                        <Button type="button"
+            className="btn btn-danger" onClick={() =>
+                            store.dispatch({
                                 
                                 type: "DEL",
                                 payload: {
@@ -44,7 +47,7 @@ return(
                                 
                                 },
                             })}
-                            > delete</button>
+                            > delete</Button>
                     </div>
                 )})}
         </div>

@@ -4,6 +4,9 @@ import { Card, Image, Button, Container, ContainerMain } from "./styles";
 import store from "./store";
 import cstore from "./cart/cartStore"
 import { Link } from "react-router-dom";
+import './navbar.css'
+import creducer from "./cart/cartReducer"
+
 import './navbar.css';
 
 export default function firstPage(list) {
@@ -26,16 +29,20 @@ export default function firstPage(list) {
           <p className="card-body">{item.price}</p>
           </Card>
           </Link>
+         
+
           <Button
             type="button"
-            className="btn btn-danger" onClick={() => cstore.dispatch({
+            className="btn btn-danger" onClick={() =>{ 
+              store.reducerManager.add("cart", creducer)
+              store.dispatch({
                 type: 'ADD',
                 value: item,
                 payload: {
                   id: item.id,
                 },
               })
-            }
+            }}
           >
             Add to cart
           </Button>
