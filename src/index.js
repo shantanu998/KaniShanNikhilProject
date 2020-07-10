@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Grid from "./grid";
 import LazyImage from "./lazyImage";
+
 window.addEventListener(
   "touchmove",
   (event) => {
