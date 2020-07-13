@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { StaticRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 //import { Card, Image, Button, Container, ContainerMain } from "./styles";
 //import FirstPage from "./firstPage";

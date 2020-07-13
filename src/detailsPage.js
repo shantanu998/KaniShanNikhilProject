@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export default function detailsPage({ match, list }) {
   // const [match, list] = props.children;
   return (
-    <div style={{ margin: "20px" }}>
+    <div style={{ margin: "5%" }}>
       <div>
         <ProductDetails className="productDetails">
           <ImageBig
