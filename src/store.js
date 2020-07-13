@@ -2,7 +2,7 @@ import { createStore,combineReducers, applyMiddleware } from "redux";
 import lreducer from "./reducer";
 import createSagaMiddleware from "redux-saga";
 import { watchInitialize } from "./sagas";
-import creducer from "./cart/cartReducer"
+
 const sagaMiddleware = createSagaMiddleware();
 
 
@@ -46,7 +46,7 @@ export function createReducerManager(initialReducers) {
   
         // Add the reducer to the reducer mapping
         reducers[key] = reducer
-    
+    {console.log("cart reducer added")}
   
         // Generate a new combined reducer
         combinedReducer = combineReducers(reducers)
