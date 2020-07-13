@@ -31,25 +31,26 @@ export default function FirstPage({ list }) {
               </Card>
             </Link>
 
-          <Button
-            type="button"
-            className="btn btn-danger" onClick={() =>{ 
-              store.reducerManager.add("cart", creducer)
-              store.dispatch({
-                type: 'ADD',
-                value: item,
-                payload: {
-                  id: item.id,
-                },
-              })
-              window.alert('Item added to cart')
-            }}
-          >
-            Add to cart
-          </Button>
-        </div>
-      ))}
-    </Container>
+            <Button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => {
+                store.reducerManager.add("cart", creducer);
+                store.dispatch({
+                  type: "ADD",
+                  value: item,
+                  payload: {
+                    id: item.id,
+                  },
+                });
+                window.alert("Item added to cart");
+              }}
+            >
+              Add to cart
+            </Button>
+          </div>
+        ))}
+      </Container>
     </ContainerMain>
   );
 }
