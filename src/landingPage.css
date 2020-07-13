@@ -9,8 +9,10 @@
 }
 .landing-text{
     display: inline-block;
-    text-align: justify;
-    padding:100px;
+    
+    padding:70px;
+    
+    
 }
 .landing-photo{
     display: inline-block;
@@ -19,9 +21,22 @@
 }
 
 .offers-img{
-    width: 650px;
-    height: 400px;
+    width: 250px;
+    height: 300px;
+    
 }
+@media only screen and (min-width: 768px) {
+    .landing-text{
+        display: inline-block;
+        text-align: justify;
+        padding:100px;
+        
+        
+    }
+    .offers-img{
+        width: 600px;
+        height: 400px;
+    }}
 
 .shop-btn{
     width: 120px;
