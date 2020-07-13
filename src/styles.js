@@ -15,6 +15,15 @@ export const Image = styled.img`
 `;
 export const Button = styled.button`
   width: 100px;
+  text-align: center;
+  background-color: crimson;
+  color: white;
+  margin: 10px;
+  font-size: 14px;
+  border: crimson;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 0px 10px #282c34;
 `;
 
 export const ContainerMain = styled.div`
