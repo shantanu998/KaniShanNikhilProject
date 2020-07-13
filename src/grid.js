@@ -9,10 +9,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import store from "./store";
 import { Link } from "react-router-dom";
 import Loadable from 'react-loadable';
+import LandingPage from './landingPage';
 import './navbar.css';
 
+
+
 const LoadableShop = Loadable({
-	loader: () => import('./firstPage'),
+  loader: () => import('./firstPage'),
 	loading() {
 		return <div>Loading...</div>
 	}
@@ -31,6 +34,8 @@ const LoadableDetails = Loadable({
 		return <div>Loading...</div>
 	}
 })
+
+
 
 
 export default function Grid(){
@@ -80,7 +85,7 @@ export default function Grid(){
           </Route>
           <Route path="/cart/" exact strict component={() => <LoadableCart clist = {clist}/>}>
           </Route>
-          <Route path="/" exact component={() => <h1>Welcome to our E-Shop</h1>}></Route>
+          <Route path="/" exact component={() => <LandingPage/>}></Route>
         </Router>
       );
 
