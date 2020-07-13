@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StaticRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 //import { Card, Image, Button, Container, ContainerMain } from "./styles";
 //import FirstPage from "./firstPage";
@@ -59,7 +59,7 @@ export default function Grid() {
   //console.log(clist.length);
 
   return (
-    <Router>
+    <div>
       <nav className="nav-wrapper">
         <div className="container">
           <ul className="right">
@@ -121,6 +121,6 @@ export default function Grid() {
         component={() => <LoadableCart clist={clist} />}
       ></Route>
       <Route path="/" exact component={() => <LandingPage />}></Route>
-    </Router>
+    </div>
   );
 }
